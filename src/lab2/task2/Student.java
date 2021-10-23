@@ -7,14 +7,14 @@ public class Student {
     public Student (int id, String name, String surname) {
         this.id = id;
         this.name = name;
-        surname = surname;
+        this.surname = surname;
     }
 
     // copy constructor - se copiaza un obiect
     public Student (Student st) {
         this.id = st.id;
         this.name = st.name;
-        this.surname = surname;
+        this.surname = st.surname;
     }
 
     public int getId() {
