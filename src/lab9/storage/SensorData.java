@@ -16,4 +16,12 @@ public class SensorData {
         this.stepsCount = stepsCount;
         this.timestamp = timestamp;
     }
+
+    public int getStepsCount() {
+        return stepsCount;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
 }
