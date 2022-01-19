@@ -36,20 +36,20 @@ public class Main {
 		Employee e2 = new Employee("Abdul", 22, "Mumbai", Gender.MALE, Disability.HEALTHY, Religion.BUDDHISM);
 		Employee e3 = new Employee("Arjun", 20, "Ahmedabad", Gender.FEMALE, Disability.HEALTHY, Religion.BUDDHISM);
 		Employee e4 = new Employee("Brijesh", 39, "Mumbai", Gender.MALE, Disability.DISABLED, Religion.BUDDHISM);
-		Employee e5 = new Employee("Darsh", 49, "Delhi", Gender.MALE, Disability.DISABLED, Religion.CRISTIANITY);
-		Employee e6 = new Employee("Ekaraj", 32, "Mumbai", Gender.FEMALE, Disability.HEALTHY, Religion.CRISTIANITY);
-		Employee e7 = new Employee("Fariq", 25, "Delhi", Gender.MALE, Disability.DISABLED, Religion.CRISTIANITY);
-		Employee e8 = new Employee("Girik", 50, "Delhi", Gender.FEMALE, Disability.HEALTHY, Religion.CRISTIANITY);
-		Employee e9 = new Employee("Gunbir", 56, "Jaipur", Gender.FEMALE, Disability.DISABLED, Religion.CRISTIANITY);
+		Employee e5 = new Employee("Darsh", 49, "Delhi", Gender.MALE, Disability.DISABLED, Religion.CHRISTIANITY);
+		Employee e6 = new Employee("Ekaraj", 32, "Mumbai", Gender.FEMALE, Disability.HEALTHY, Religion.CHRISTIANITY);
+		Employee e7 = new Employee("Fariq", 25, "Delhi", Gender.MALE, Disability.DISABLED, Religion.CHRISTIANITY);
+		Employee e8 = new Employee("Girik", 50, "Delhi", Gender.FEMALE, Disability.HEALTHY, Religion.CHRISTIANITY);
+		Employee e9 = new Employee("Gunbir", 56, "Jaipur", Gender.FEMALE, Disability.DISABLED, Religion.CHRISTIANITY);
 		Employee e10 = new Employee("Hitesh", 23, "Mumbai", Gender.MALE, Disability.HEALTHY, Religion.CALVINISM);
 		Employee e11 = new Employee("Jagdish", 46, "Bangalore", Gender.MALE, Disability.HEALTHY, Religion.CALVINISM);
 		Employee e12 = new Employee("Jairaj", 58, "Mumbai", Gender.FEMALE, Disability.DISABLED, Religion.DAOISM);
 		Employee e13 = new Employee("Kabir", 42, "Delhi", Gender.MALE, Disability.HEALTHY, Religion.DAOISM);
 		Employee e14 = new Employee("Krishna", 34, "Ahmedabad", Gender.FEMALE, Disability.DISABLED, Religion.DAOISM);
-		Employee e15 = new Employee("Mitesh", 18, "Mumbai", Gender.MALE, Disability.ANONIMOUS, Religion.HINDUISM);
+		Employee e15 = new Employee("Mitesh", 18, "Mumbai", Gender.MALE, Disability.ANONYMOUS, Religion.HINDUISM);
 		Employee e16 = new Employee("Naveen", 27, "Bangalore", Gender.FEMALE, Disability.HEALTHY, Religion.HINDUISM);
-		Employee e17 = new Employee("Onkar", 37, "Ahmedabad", Gender.FEMALE, Disability.ANONIMOUS, Religion.ISLAM);
-		Employee e18 = new Employee("Praneel", 49, "Bangalore", Gender.MALE, Disability.ANONIMOUS, Religion.ISLAM);
+		Employee e17 = new Employee("Onkar", 37, "Ahmedabad", Gender.FEMALE, Disability.ANONYMOUS, Religion.ISLAM);
+		Employee e18 = new Employee("Praneel", 49, "Bangalore", Gender.MALE, Disability.ANONYMOUS, Religion.ISLAM);
 		Employee e19 = new Employee("Ranveer", 52, "Mumbai", Gender.MALE, Disability.DISABLED, Religion.ISLAM);
 
 		// Projects
@@ -482,7 +482,7 @@ public class Main {
 		System.out.println();
 		System.out.println();
 
-		System.out.println(BankReport.getProjectWorkedOnByMostCustomers(bank));
+		//System.out.println(BankReport.getProjectWorkedOnByMostCustomers(bank));
 		// Project [name=Yoda, workers=20]
 
 		System.out.println();
@@ -494,7 +494,7 @@ public class Main {
 		System.out.println();
 		System.out.println();
 
-		System.out.println(BankReport.getGenderWhoWorkedOnMostProjects(bank));
+		//System.out.println(BankReport.getGenderWhoWorkedOnMostProjects(bank));
 		// MALE
 
 		System.out.println();
@@ -512,7 +512,7 @@ public class Main {
 		System.out.println(BusinessReport.getEmployeesOnSameDisability(business2));
 		// {HEALTHY=[Name Kabir, city Delhi, age 42, gender MALE
 		// 	, Name Naveen, city Bangalore, age 27, gender FEMALE
-		// 	], ANONIMOUS=[Name Mitesh, city Mumbai, age 18, gender MALE
+		// 	], ANONYMOUS=[Name Mitesh, city Mumbai, age 18, gender MALE
 		// 	, Name Onkar, city Ahmedabad, age 37, gender FEMALE
 		// 	, Name Praneel, city Bangalore, age 49, gender MALE
 		// 	], DISABLED=[Name Ranveer, city Mumbai, age 52, gender MALE
@@ -540,9 +540,9 @@ public class Main {
 		System.out.println();
 		System.out.println();
 
-		System.out.println(BusinessReport.getEmployeesMaxByReligionMinByGenderSortedByCitySortedByAge(business1));
-		// [Name Fariq, city Delhi, age 25, gender MALE, religion CRISTIANITY
-		// , Name Darsh, city Delhi, age 49, gender MALE, religion CRISTIANITY
+		//System.out.println(BusinessReport.getEmployeesMaxByReligionMinByGenderSortedByCitySortedByAge(business1));
+		// [Name Fariq, city Delhi, age 25, gender MALE, religion CHRISTIANITY
+		// , Name Darsh, city Delhi, age 49, gender MALE, religion CHRISTIANITY
 		// ]
 
 
@@ -555,8 +555,8 @@ public class Main {
 		System.out.println();
 		System.out.println();
 
-		System.out.println(BusinessReport.getReligionOfEmployeesWithMostAccounts(business1));
-		// CRISTIANITY
+		//System.out.println(BusinessReport.getReligionOfEmployeesWithMostAccounts(business1));
+		// CHRISTIANITY
 
 		System.out.println();
 		System.out.println();
@@ -567,31 +567,31 @@ public class Main {
 		System.out.println();
 		System.out.println();
 
-		System.out.println(BusinessReport.getEmployeesOnSameProjectAndCity(business1));
+		//System.out.println(BusinessReport.getEmployeesOnSameProjectAndCity(business1));
 		// {Project [name=Yaeger, workers=8]={Jaipur=[Name Rajesh, city Jaipur, age 29, gender MALE, religion BUDDHISM
 		// 	], Bangalore=[Name Jagdish, city Bangalore, age 46, gender MALE, religion CALVINISM
 		// 	]}, Project [name=Hornets, workers=10]={Mumbai=[Name Abdul, city Mumbai, age 22, gender MALE, religion BUDDHISM
 		// 	, Name Jairaj, city Mumbai, age 58, gender FEMALE, religion DAOISM
 		// 	, Name Hitesh, city Mumbai, age 23, gender MALE, religion CALVINISM
 		// 	]}, Project [name=Whistler, workers=24]={Mumbai=[Name Brijesh, city Mumbai, age 39, gender MALE, religion BUDDHISM
-		// 	]}, Project [name=Coding Region, workers=3]={Delhi=[Name Darsh, city Delhi, age 49, gender MALE, religion CRISTIANITY
-		// 	]}, Project [name=Revolution, workers=10]={Delhi=[Name Girik, city Delhi, age 50, gender FEMALE, religion CRISTIANITY
-		// 	]}, Project [name=Mercury, workers=60]={Delhi=[Name Girik, city Delhi, age 50, gender FEMALE, religion CRISTIANITY
-		// 	]}, Project [name=Fast Ball, workers=14]={Delhi=[Name Fariq, city Delhi, age 25, gender MALE, religion CRISTIANITY
-		// 	]}, Project [name=Sputnik, workers=6]={Mumbai=[Name Ekaraj, city Mumbai, age 32, gender FEMALE, religion CRISTIANITY
-		// 	]}, Project [name=Stratos, workers=8]={Delhi=[Name Fariq, city Delhi, age 25, gender MALE, religion CRISTIANITY
+		// 	]}, Project [name=Coding Region, workers=3]={Delhi=[Name Darsh, city Delhi, age 49, gender MALE, religion CHRISTIANITY
+		// 	]}, Project [name=Revolution, workers=10]={Delhi=[Name Girik, city Delhi, age 50, gender FEMALE, religion CHRISTIANITY
+		// 	]}, Project [name=Mercury, workers=60]={Delhi=[Name Girik, city Delhi, age 50, gender FEMALE, religion CHRISTIANITY
+		// 	]}, Project [name=Fast Ball, workers=14]={Delhi=[Name Fariq, city Delhi, age 25, gender MALE, religion CHRISTIANITY
+		// 	]}, Project [name=Sputnik, workers=6]={Mumbai=[Name Ekaraj, city Mumbai, age 32, gender FEMALE, religion CHRISTIANITY
+		// 	]}, Project [name=Stratos, workers=8]={Delhi=[Name Fariq, city Delhi, age 25, gender MALE, religion CHRISTIANITY
 		// 	], Mumbai=[Name Jairaj, city Mumbai, age 58, gender FEMALE, religion DAOISM
 		// 	]}, Project [name=Westerners, workers=12]={Ahmedabad=[Name Arjun, city Ahmedabad, age 20, gender FEMALE, religion BUDDHISM
-		// 	]}, Project [name=The Blue Bird, workers=7]={Mumbai=[Name Ekaraj, city Mumbai, age 32, gender FEMALE, religion CRISTIANITY
+		// 	]}, Project [name=The Blue Bird, workers=7]={Mumbai=[Name Ekaraj, city Mumbai, age 32, gender FEMALE, religion CHRISTIANITY
 		// 	]}, Project [name=Strive Training, workers=8]={Mumbai=[Name Hitesh, city Mumbai, age 23, gender MALE, religion CALVINISM
-		// 	]}, Project [name=Sirius, workers=6]={Delhi=[Name Darsh, city Delhi, age 49, gender MALE, religion CRISTIANITY
+		// 	]}, Project [name=Sirius, workers=6]={Delhi=[Name Darsh, city Delhi, age 49, gender MALE, religion CHRISTIANITY
 		// 	]}, Project [name=Yoda, workers=20]={Mumbai=[Name Jairaj, city Mumbai, age 58, gender FEMALE, religion DAOISM
 		// 	, Name Hitesh, city Mumbai, age 23, gender MALE, religion CALVINISM
 		// 	], Bangalore=[Name Jagdish, city Bangalore, age 46, gender MALE, religion CALVINISM
 		// 	]}, Project [name=Next Gala, workers=36]={Jaipur=[Name Rajesh, city Jaipur, age 29, gender MALE, religion BUDDHISM
 		// 	], Mumbai=[Name Brijesh, city Mumbai, age 39, gender MALE, religion BUDDHISM
 		// 	]}, Project [name=Bender Project, workers=6]={Jaipur=[Name Rajesh, city Jaipur, age 29, gender MALE, religion BUDDHISM
-		// 	]}, Project [name=Limitless Horizons, workers=8]={Jaipur=[Name Gunbir, city Jaipur, age 56, gender FEMALE, religion CRISTIANITY
+		// 	]}, Project [name=Limitless Horizons, workers=8]={Jaipur=[Name Gunbir, city Jaipur, age 56, gender FEMALE, religion CHRISTIANITY
 		// 	]}, Project [name=Meetup for the God, workers=26]={Ahmedabad=[Name Arjun, city Ahmedabad, age 20, gender FEMALE, religion BUDDHISM
 		// 	]}}
 			
@@ -611,11 +611,11 @@ public class Main {
 		// 	, Name Brijesh, city Mumbai, age 39, gender MALE, religion BUDDHISM
 		// 	, Name Abdul, city Mumbai, age 22, gender MALE, religion BUDDHISM
 		// 	]}, DAOISM={FEMALE=[Name Jairaj, city Mumbai, age 58, gender FEMALE, religion DAOISM
-		// 	]}, CRISTIANITY={FEMALE=[Name Gunbir, city Jaipur, age 56, gender FEMALE, religion CRISTIANITY
-		// 	, Name Girik, city Delhi, age 50, gender FEMALE, religion CRISTIANITY
-		// 	, Name Ekaraj, city Mumbai, age 32, gender FEMALE, religion CRISTIANITY
-		// 	], MALE=[Name Darsh, city Delhi, age 49, gender MALE, religion CRISTIANITY
-		// 	, Name Fariq, city Delhi, age 25, gender MALE, religion CRISTIANITY
+		// 	]}, CHRISTIANITY={FEMALE=[Name Gunbir, city Jaipur, age 56, gender FEMALE, religion CHRISTIANITY
+		// 	, Name Girik, city Delhi, age 50, gender FEMALE, religion CHRISTIANITY
+		// 	, Name Ekaraj, city Mumbai, age 32, gender FEMALE, religion CHRISTIANITY
+		// 	], MALE=[Name Darsh, city Delhi, age 49, gender MALE, religion CHRISTIANITY
+		// 	, Name Fariq, city Delhi, age 25, gender MALE, religion CHRISTIANITY
 		// 	]}, CALVINISM={MALE=[Name Jagdish, city Bangalore, age 46, gender MALE, religion CALVINISM
 		// 	, Name Hitesh, city Mumbai, age 23, gender MALE, religion CALVINISM
 		// 	]}}

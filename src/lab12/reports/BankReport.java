@@ -16,55 +16,45 @@ public class BankReport {
 
     public static int getNumberOfCustomers(Bank bank) {
         // All the customers that have accounts at the bank
-
-        return 0;
+        List<Employee> employees = bank.getClients().stream().flatMap(business -> business.getEmployees().stream()).collect(Collectors.toList());
+        return (int) employees.stream().filter(employee -> employee.getAccounts().size() > 0).count();
     }
 
     public static int getNumberOfAccounts(Bank bank) {
         // Accounts of all the customers of the bank
-
-        return 0;
+        List<Account> accounts = bank.getClients().stream().flatMap(business -> business.getEmployees().stream()).flatMap(employee -> employee.getAccounts().stream()).collect(Collectors.toList());
+        return accounts.size();
     }
 
     public static SortedSet<Employee> getCustomersSorted(Bank bank) {
         // Display the set of customers in alphabetical order
-
-        return null;
+        SortedSet<Employee> employees = bank.getClients().stream().flatMap(business -> business.getEmployees().stream()).collect(Collectors.toCollection(TreeSet::new));
+        return employees;
     }
 
     public static double getTotalSumInAccounts(Bank bank) {
         // Sum of all customers' accounts balances
-
-        return 0.0d;
+        List<Account> accounts = bank.getClients().stream().flatMap(business -> business.getEmployees().stream()).flatMap(employee -> employee.getAccounts().stream()).collect(Collectors.toList());
+        return accounts.stream().mapToDouble(Account::getBalance).sum();
     }
 
-    public static SortedSet<Employee> getAccountsSortedBySum(Bank bank) {
+    public static SortedSet<Account> getAccountsSortedBySum(Bank bank) {
         // The set of all accounts, ordered by current account balance
-
-        return null;
+        SortedSet<Account> accounts = bank.getClients().stream().flatMap(business -> business.getEmployees().stream()).flatMap(employee -> employee.getAccounts().stream()).collect(Collectors.toCollection(TreeSet::new));
+        return accounts;
     }
 
     public static Map<Employee, Collection<Account>> getCustomerAccounts(Bank bank) {
         // Return a map of all the customers with their respective accounts
-
-        return null;
+        Map<Employee, Collection<Account>> map = new HashMap<>();
+        for (Employee employee : bank.getClients().stream().flatMap(business -> business.getEmployees().stream()).collect(Collectors.toList())) {
+            map.put(employee, employee.getAccounts());
+        }
+        return map;
     }
 
     public static Map<String, List<Employee>> getCustomersByCity(Bank bank) {
         // Map all the customers to their respective cities
-
-        return null;
-    }
-
-    public static Project getProjectWorkedOnByMostCustomers(Bank bank) {
-        // Get all the projects from the employees and find the most repeated one in the list
-
-        return null;
-    }
-
-    public static Gender getGenderWhoWorkedOnMostProjects(Bank bank) {
-        // Get all the pairs <gender, project> or <gender, List<project>>, then reduce the array to only one pair
-        // of each gender and retrieve the one with most counted projects (you are expected to count duplicates as well).
 
         return null;
     }
