@@ -1,5 +1,7 @@
 package lab7.task1;
 
+import lab7.task1.document.DokuWikiVisitor;
+import lab7.task1.document.MarkdownVisitor;
 import lab7.task1.document.TextSegment;
 
 import java.util.List;
@@ -16,12 +18,20 @@ public class WikiGenerator {
     }
 
     public StringBuilder getDokuWikiDocument() {
-        // TODO apply dokuwiki visitor on the text segments
-        return null;
+        DokuWikiVisitor v = new DokuWikiVisitor();
+        StringBuilder string = new StringBuilder();
+        for (TextSegment segment : textSegments) {
+            string.append(segment.accept(v).toString());
+        }
+        return string;
     }
 
     public StringBuilder getMarkdownDocument() {
-        // TODO apply Markdown visitor on the text segments
-        return null;
+        MarkdownVisitor v = new MarkdownVisitor();
+        StringBuilder string = new StringBuilder();
+        for (TextSegment segment : textSegments) {
+            string.append(segment.accept(v).toString());
+        }
+        return string;
     }
 }
