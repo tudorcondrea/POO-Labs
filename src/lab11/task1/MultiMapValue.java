@@ -3,45 +3,52 @@ package lab11.task1;
 import java.util.*;
 
 public class MultiMapValue<K, V> {
+    private HashMap<K, List<V>> map;
+
+    public MultiMapValue() {
+        map = new HashMap<>();
+    }
+
     public void add(K key, V value) {
-        // TODO
+        if (!map.containsKey(key)) {
+            map.put(key, new ArrayList<>());
+        }
+        map.get(key).add(value);
     }
 
     public void addAll(K key, List<V> values) {
-        // TODO
+        for (V value : values) {
+            add(key, value);
+        }
     }
 
     public void addAll(MultiMapValue<K, V> map) {
-        // TODO
+        for (K key : map.map.keySet()) {
+            addAll(key, map.getValues(key));
+        }
     }
 
     public V getFirst(K key) {
-        // TODO
-        return null;
+        return map.get(key).get(0);
     }
 
     public List<V> getValues(K key) {
-        // TODO
-        return null;
+        return map.get(key);
     }
 
     public boolean containsKey(K key) {
-        // TODO
-        return false;
+        return map.containsKey(key);
     }
 
     public boolean isEmpty() {
-        // TODO
-        return false;
+        return map.isEmpty();
     }
 
     public List<V> remove(K key) {
-        // TODO
-        return null;
+        return map.remove(key);
     }
 
     public int size() {
-        // TODO
-        return 0;
+        return map.size();
     }
 }

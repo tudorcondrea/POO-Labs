@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class TestMultiMapValue {
     private MultiMapValue<String, String> map;
@@ -40,36 +41,58 @@ public class TestMultiMapValue {
 
     @Test
     public void testAddTwoElements() {
-        // TODO
+        map.add("key1", "value1");
+        map.add("key2", "value2");
+        Assertions.assertFalse(map.isEmpty());
+        Assertions.assertEquals("value1", map.getFirst("key1"));
+        Assertions.assertEquals("value2", map.getFirst("key2"));
     }
 
     @Test
     public void testGetFirst() {
-        // TODO
+        map.add("key", "value1");
+        map.add("key", "value2");
+        Assertions.assertEquals("value1", map.getFirst("key"));
+        Assertions.assertNotEquals("value2", map.getFirst("key"));
     }
 
     @Test
     public void testContainsKey() {
-        // TODO
+        map.add("key1", "value1");
+        map.add("key2", "value");
+        Assertions.assertTrue(map.containsKey("key1"));
+        Assertions.assertFalse(map.containsKey("key3"));
     }
 
     @Test
     public void testSize() {
-        // TODO
+        map.add("key1", "value1");
+        map.add("key1", "value2");
+        Assertions.assertEquals(1, map.size());
     }
 
     @Test
     public void testRemoveKey() {
-        // TODO
+        map.add("key1", "value1");
+        map.remove("key1");
+        Assertions.assertTrue(map.isEmpty());
     }
 
     @Test
     public void testAddAllWithList() {
-        // TODO
+        List<String> list = new ArrayList<String>();
+        list.add("value1");
+        list.add("value2");
+        map.addAll("key1", list);
+        Assertions.assertEquals(list, map.getValues("key1"));
     }
 
     @Test
     public void testAddAllWithMultiMapValue() {
-        // TODO
+        MultiMapValue<String, String> map = new MultiMapValue<>();
+        map.add("key1", "value1");
+        map.add("key2", "value2");
+        this.map.addAll(map);
+        Assertions.assertEquals("value2", map.getFirst("key2"));
     }
 }
