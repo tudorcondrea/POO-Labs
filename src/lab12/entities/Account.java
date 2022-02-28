@@ -4,10 +4,10 @@ import lab12.exceptions.NotEnoughFundsException;
 
 import java.util.Objects;
 
-public class Account {
-    private int id;
+public class Account implements Comparable {
+    private final int id;
 	private double balance;
-	private double maximumAmountToWithdraw;
+	private final double maximumAmountToWithdraw;
     
     public Account(int id, double balance, double maximumAmountToWithdraw) {
 		this.id = id;
@@ -72,5 +72,11 @@ public class Account {
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getBalance(), getMaximumAmountToWithdraw());
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Account a = (Account) o;
+		return Double.compare(this.balance, a.balance);
 	}
 }

@@ -2,15 +2,15 @@ package lab12.entities;
 
 import java.util.*;
 
-public class Employee {
-    private String name;
-    private Integer age;
-    private String city;
+public class Employee implements Comparable {
+    private final String name;
+    private final Integer age;
+    private final String city;
     private Gender gender;
     private Disability disability;
     private Religion religion;
-    private Set<Account> accounts = new HashSet<>();
-    private List<Project> projects = new ArrayList<>();
+    private final Set<Account> accounts = new HashSet<>();
+    private final List<Project> projects = new ArrayList<>();
 
     public Employee(String name, Integer age, String city) {
         this.name = name;
@@ -58,15 +58,11 @@ public class Employee {
 	}
 	
 	public Set<Account> getAccounts() {
-        // TODO: get an immutable set of data
-        
-        return null;
+        return Collections.unmodifiableSet(accounts);
     }
 	
 	public List<Project> getProjects() {
-        // TODO: get an immutable list of data
-        
-        return null;
+        return Collections.unmodifiableList(projects);
     }
     
     @Override
@@ -102,4 +98,10 @@ public class Employee {
 	public int hashCode() {
 		return Objects.hash(getName(), getGender(), getCity(), getAge());
 	}
+
+    @Override
+    public int compareTo(Object o) {
+        Employee e = (Employee) o;
+        return this.name.compareTo(e.name);
+    }
 }

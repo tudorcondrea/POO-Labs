@@ -4,7 +4,6 @@ import java.util.*;
 import lab12.exceptions.ExistsException;
 
 public class Bank {
-    
     private final Set<Business> clients = new HashSet<>();
 
     public void addClient(final Business client) throws ExistsException {
@@ -16,8 +15,6 @@ public class Bank {
     }
     
     public Set<Business> getClients() {
-		// TODO: get an immutable set of data
-
-		return null;
+		return Collections.unmodifiableSet(clients);
 	}
 }

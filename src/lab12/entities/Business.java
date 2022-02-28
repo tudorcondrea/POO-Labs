@@ -5,9 +5,8 @@ import lab12.exceptions.ExistsException;
 import java.util.*;
 
 public class Business {
-    
-    private Set<Employee> employees = new HashSet<>();
-    private List<Project> projects = new ArrayList<>();
+    private final Set<Employee> employees = new HashSet<>();
+    private final List<Project> projects = new ArrayList<>();
 
     public void addEmployee(final Employee employee) throws ExistsException {
     	if (employees.contains(employee)) {
@@ -26,15 +25,11 @@ public class Business {
     }
     
     public Set<Employee> getEmployees() {
-		// TODO: get an immutable set of data
-
-		return null;
+		return Collections.unmodifiableSet(employees);
     }
     
     public List<Project> getProjects() {
-		// TODO: get an immutable list of data
-
-		return null;
+		return Collections.unmodifiableList(projects);
     }
 
 }
