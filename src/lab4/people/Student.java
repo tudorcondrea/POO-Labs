@@ -2,10 +2,8 @@ package lab4.people;
 
 import lab4.database.Database;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.xml.crypto.Data;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Student {
@@ -19,7 +17,11 @@ public class Student {
         this.subjects = subjects;
     }
 
-    // TODO: copy constructor
+    public Student(Student st) {
+        this.firstName = st.firstName;
+        this.lastName = st.lastName;
+        this.subjects = st.subjects;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -46,18 +48,23 @@ public class Student {
     }
 
     public double averageGrade() {
-        // TODO
-        return 0;
+        double total = 0, count = 0;
+        for (String key : this.subjects.keySet()) {
+            total += this.subjects.get(key);
+            count++;
+        }
+        return total / count;
     }
 
     public List<Teacher> getAllTeachers() {
-        // TODO
-        return null;
+        List<Teacher> teaList = new ArrayList<Teacher>();
+        Database db = Database.getInstance();
+        teaList = db.findAllTeachers();
+        return teaList;
     }
 
     public int getGradeForSubject(String subject) {
-        // TODO
-        return 0;
+        return this.subjects.get(subject);
     }
 
     @Override
@@ -67,27 +74,37 @@ public class Student {
     }
 
     public List<Teacher> getTeachersBySubject(String subject) {
-        // TODO
-        return null;
+        List<Teacher> teaList = new ArrayList<Teacher>();
+        Database db = Database.getInstance();
+        teaList = db.findTeachersBySubject(subject);
+        return teaList;
     }
 
     public List<Student> getAllStudents() {
-        // TODO
-        return null;
+        List<Student> studList = new ArrayList<Student>();
+        Database db = Database.getInstance();
+        studList = db.findAllStudents();
+        return studList;
     }
 
     public List<Student> getStudentsBySubject(String subject) {
-        // TODO
-        return null;
+        List<Student> studList = new ArrayList<Student>();
+        Database db = Database.getInstance();
+        studList = db.getStudentsBySubject(subject);
+        return studList;
     }
 
     public List<Student> getStudentsByAverageGrade() {
-        // TODO
-        return null;
+        List<Student> studList = new ArrayList<Student>();
+        Database db = Database.getInstance();
+        studList = db.getStudentsByAverageGrade();
+        return studList;
     }
 
     public List<Student> getStudentsByGradeForSubject(String subject) {
-        // TODO
-        return null;
+        List<Student> studList = new ArrayList<Student>();
+        Database db = Database.getInstance();
+        studList = db.getStudentsByGradeForSubject(subject);
+        return studList;
     }
 }

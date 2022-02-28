@@ -1,7 +1,7 @@
 package lab7.task1;
 
 
-import lab7.task1.document.TextSegment;
+import lab7.task1.document.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class Test {
 
         System.out.println("----------------------Dokuwiki----------------------");
         System.out.println(generator.getDokuWikiDocument());
-        System.out.println("---------------------MardownWiki--------------------");
+        System.out.println("---------------------MarkdownWiki--------------------");
         System.out.println(generator.getMarkdownDocument());
 
         // TODO __AFTER__ the main functionality is working correctly
@@ -27,7 +27,7 @@ public class Test {
         List<TextSegment> textSegments = new ArrayList<>();
 
         // TODO uncomment this after implementing all the TextSegment subclasses
-        /*textSegments.add(new PlainTextSegment("Mecanismul din spatele pattern-ului "));
+        textSegments.add(new PlainTextSegment("Mecanismul din spatele pattern-ului "));
         textSegments.add(new ItalicTextSegment("Visitor"));
         textSegments.add(new PlainTextSegment(" poartă numele de "));
         textSegments.add(new BoldTextSegment("double-dispatch"));
@@ -42,7 +42,6 @@ public class Test {
         textSegments.add(new PlainTextSegment(", ce cuprinde mai multe "));
         textSegments.add(new ItalicTextSegment("obiecte de tipuri diferite"));
         textSegments.add(new PlainTextSegment(".\n"));
-        */
         return textSegments;
     }
 }

@@ -2,6 +2,8 @@ package lab4.people;
 
 import lab4.database.Database;
 
+import javax.xml.crypto.Data;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Teacher {
@@ -15,7 +17,11 @@ public class Teacher {
         this.subjects = subjects;
     }
 
-    // TODO: copy constructor
+    public Teacher(Teacher tea) {
+        this.firstName = tea.firstName;
+        this.lastName = tea.lastName;
+        this.subjects = tea.subjects;
+    }
 
     @Override
     public String toString() {
@@ -48,32 +54,44 @@ public class Teacher {
     }
 
     public List<Teacher> getAllTeachers() {
-        // TODO
-        return null;
+        Database db = Database.getInstance();
+        List<Teacher> teaList = new ArrayList<Teacher>();
+        teaList = db.findAllTeachers();
+        return teaList;
     }
 
     public List<Teacher> getTeachersBySubject(String subject) {
-        // TODO
-        return null;
+        Database db = Database.getInstance();
+        List<Teacher> teaList = new ArrayList<Teacher>();
+        teaList = db.findTeachersBySubject(subject);
+        return teaList;
     }
 
     public List<Student> getAllStudents() {
-        // TODO
-        return null;
+        Database db = Database.getInstance();
+        List<Student> studList = new ArrayList<Student>();
+        studList = db.findAllStudents();
+        return studList;
     }
 
     public List<Student> getStudentsBySubject(String subject) {
-        // TODO
-        return null;
+        Database db = Database.getInstance();
+        List<Student> studList = new ArrayList<Student>();
+        studList = db.getStudentsBySubject(subject);
+        return studList;
     }
 
     public List<Student> getStudentsByAverageGrade() {
-        // TODO
-        return null;
+        Database db = Database.getInstance();
+        List<Student> studList = new ArrayList<Student>();
+        studList = db.getStudentsByAverageGrade();
+        return studList;
     }
 
     public List<Student> getStudentsByGradeForSubject(String subject) {
-        // TODO
-        return null;
+        Database db = Database.getInstance();
+        List<Student> studList = new ArrayList<Student>();
+        studList = db.getStudentsByGradeForSubject(subject);
+        return studList;
     }
 }
